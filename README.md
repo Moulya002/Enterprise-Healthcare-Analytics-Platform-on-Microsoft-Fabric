@@ -67,7 +67,7 @@ Power BI Dashboard
 
 ---
 
-# 📂 Project Structure
+# Project Structure
 
 ```
 Enterprise-Healthcare-Analytics-Platform-on-Microsoft-Fabric/
