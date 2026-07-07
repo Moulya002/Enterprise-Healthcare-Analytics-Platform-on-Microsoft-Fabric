@@ -1,78 +1,63 @@
-# 🏥 Enterprise Healthcare Analytics Platform on Microsoft Fabric
+# 🏥 Enterprise Healthcare Analytics Platform using Microsoft Fabric
 
-An end-to-end Data Engineering project built using **Microsoft Fabric** to process, transform, and analyze healthcare data using the **Medallion Architecture (Bronze → Silver → Gold)**. This project demonstrates modern data engineering practices including data ingestion, transformation, orchestration, Delta Lake storage, and Power BI reporting.
+An end-to-end Data Engineering project built on **Microsoft Fabric** using the **Medallion Architecture (Bronze → Silver → Gold)**.
+
+In this project, I built a healthcare analytics pipeline that ingests raw healthcare datasets, cleans and transforms the data using PySpark, automates the workflow with Microsoft Fabric Pipelines, and prepares business-ready datasets for reporting in Power BI.
 
 ---
 
-# 📌 Project Overview
-
-This project ingests raw healthcare datasets into Microsoft Fabric Lakehouse, transforms them into clean analytical datasets, orchestrates the entire workflow using Fabric Pipelines, and prepares curated Gold tables for business intelligence and reporting.
+## 🚀 Project Overview
 
 The project follows the Medallion Architecture:
 
-```
+```text
 Raw CSV Files
       │
       ▼
-Bronze Layer (Raw Data)
+Bronze Layer
       │
       ▼
-Silver Layer (Cleaned & Standardized Data)
+Silver Layer
       │
       ▼
-Gold Layer (Business-Ready Analytics)
-      │
-      ▼
-Microsoft Fabric Pipeline
+Gold Layer
       │
       ▼
 Power BI Dashboard
 ```
 
+### Bronze Layer
+Stores the raw healthcare data exactly as received.
+
+### Silver Layer
+Cleans, standardizes, and validates the data.
+
+### Gold Layer
+Creates business-ready tables for analytics and reporting.
+
 ---
 
-# 🛠 Technologies Used
+## 🛠 Tech Stack
 
-## Cloud Platform
 - Microsoft Fabric
 - OneLake
-- Fabric Lakehouse
-
-## Data Engineering
+- Lakehouse
 - PySpark
 - Spark SQL
 - Delta Lake
-- Microsoft Fabric Notebooks
-
-## Data Processing
-- Data Cleaning
-- Data Transformation
-- Data Aggregation
-- Data Validation
-- Data Standardization
-
-## Data Orchestration
 - Microsoft Fabric Pipelines
-
-## Data Visualization
 - Power BI
-
-## Programming Language
 - Python
 - SQL
-
-## Version Control
-- Git
-- GitHub
+- Git & GitHub
 
 ---
 
-# Project Structure
+## 📂 Project Structure
 
-```
-Enterprise-Healthcare-Analytics-Platform-on-Microsoft-Fabric/
+```text
+Enterprise-Healthcare-Analytics-Platform/
 
-│
 ├── 01_Bronze_Ingestion.ipynb
 ├── 02_Silver_Transformation.ipynb
 ├── 03_Gold_Transformation.ipynb
@@ -82,30 +67,29 @@ Enterprise-Healthcare-Analytics-Platform-on-Microsoft-Fabric/
 
 ---
 
-# 📁 Dataset
+## 📊 Dataset
 
-The project uses publicly available healthcare datasets containing:
+This project uses publicly available healthcare datasets containing:
 
-- Hospital General Information
+- Hospital Information
 - Provider Services
 - Unplanned Hospital Visits
 
-These datasets are ingested into Microsoft Fabric Lakehouse and processed through Bronze, Silver, and Gold layers.
+The data is loaded into Microsoft Fabric Lakehouse and processed through the Bronze, Silver, and Gold layers.
 
 ---
 
-# 🥉 Bronze Layer
+## 🥉 Bronze Layer
 
-The Bronze layer stores raw healthcare data exactly as received.
+The Bronze layer stores the raw data without making any changes.
 
-### Tasks Performed
+### What I did
 
-- Loaded CSV files into Microsoft Fabric
-- Created Bronze Delta Tables
-- Preserved original schema
-- Stored raw data in OneLake
+- Loaded CSV files into Microsoft Fabric Lakehouse
+- Created Bronze Delta tables
+- Preserved the original data for future processing
 
-Tables Created
+### Tables
 
 - bronze_hospital_information
 - bronze_provider_services
@@ -113,31 +97,29 @@ Tables Created
 
 ---
 
-# 🥈 Silver Layer
+## 🥈 Silver Layer
 
-The Silver layer performs data cleansing and transformation.
+The Silver layer focuses on preparing clean and reliable data.
 
-### Tasks Performed
+### Transformations
 
 - Removed duplicate records
-- Standardized column names
-- Trimmed whitespace
 - Handled missing values
+- Standardized column names
 - Converted data types
-- Applied business rules
-- Created cleaned Delta tables
+- Applied basic data quality checks
 
-Output Table
+### Output Table
 
 - hospital_silver
 
 ---
 
-# 🥇 Gold Layer
+## 🥇 Gold Layer
 
-The Gold layer creates business-ready analytical datasets.
+The Gold layer contains curated datasets that are ready for reporting.
 
-### Gold Tables Created
+### Gold Tables
 
 - gold_birth_friendly
 - gold_emergency_services
@@ -146,17 +128,15 @@ The Gold layer creates business-ready analytical datasets.
 - gold_state_summary
 - gold_top_hospitals
 
-These tables are optimized for reporting and dashboard creation.
+These tables are optimized for analytics and Power BI dashboards.
 
 ---
 
-# 🔄 Data Pipeline
+## 🔄 Data Pipeline
 
-The entire ETL process is orchestrated using Microsoft Fabric Pipelines.
+The entire workflow is orchestrated using Microsoft Fabric Pipelines.
 
-Pipeline Execution Order
-
-```
+```text
 Bronze Ingestion
         │
         ▼
@@ -166,103 +146,53 @@ Silver Transformation
 Gold Transformation
 ```
 
-Each notebook executes sequentially to ensure data consistency throughout the Medallion Architecture.
+Each notebook runs in sequence to ensure the data flows smoothly through each layer.
 
 ---
 
-# 📊 Power BI Dashboard
+## 📈 Power BI Dashboard
 
-Power BI connects directly to the Gold Layer to provide business insights.
+The dashboard is built using the Gold layer tables and includes insights such as:
 
-Dashboard includes:
+- Hospital distribution by state
+- Top-rated hospitals
+- Emergency service availability
+- Birth-friendly hospitals
+- Hospital ownership analysis
 
-- Hospital Overview
-- State-wise Hospital Distribution
-- Top Rated Hospitals
-- Emergency Services Analysis
-- Birth Friendly Hospitals
-- Hospital Ownership Analysis
+> *(Dashboard screenshots will be added soon.)*
 
 ---
 
-# 🧰 Skills Demonstrated
+## 💡 Skills Demonstrated
 
 - Microsoft Fabric
-- OneLake
-- Fabric Lakehouse
-- Microsoft Fabric Pipelines
+- OneLake & Lakehouse
 - PySpark
 - Spark SQL
 - Delta Lake
 - ETL Pipeline Development
 - Medallion Architecture
-- Data Cleaning
-- Data Transformation
-- Data Engineering
-- Data Modeling
-- Data Analytics
+- Data Cleaning & Transformation
+- Microsoft Fabric Pipelines
 - Power BI
-- Git
-- GitHub
+- Git & GitHub
 
 ---
 
-# 🚀 Project Workflow
+## 📚 What I Learned
 
-```
-CSV Files
-      │
-      ▼
-OneLake
-      │
-      ▼
-Bronze Notebook
-      │
-      ▼
-Bronze Delta Tables
-      │
-      ▼
-Silver Notebook
-      │
-      ▼
-Silver Delta Table
-      │
-      ▼
-Gold Notebook
-      │
-      ▼
-Gold Delta Tables
-      │
-      ▼
-Microsoft Fabric Pipeline
-      │
-      ▼
-Power BI Dashboard
-```
+Working on this project helped me gain hands-on experience with Microsoft Fabric and modern data engineering practices. I learned how to build an end-to-end data pipeline, organize data using the Medallion Architecture, automate workflows with Fabric Pipelines, and prepare clean datasets for business reporting.
 
 ---
 
-# 📈 Key Features
-
-- End-to-End Data Engineering Project
-- Microsoft Fabric Implementation
-- Medallion Architecture
-- Delta Lake Storage
-- PySpark Data Processing
-- Fabric Pipeline Orchestration
-- Business-Ready Gold Layer
-- Interactive Power BI Reporting
-- Reproducible Notebook-Based Workflow
-
----
-
-# 👨‍💻 Author
+## 👨‍💻 Author
 
 **Moulya Reddygari Bhupal**
 
-- LinkedIn: https://www.linkedin.com/in/moulyarb/
 - GitHub: https://github.com/Moulya002
+- LinkedIn: https://www.linkedin.com/in/moulyarb/
 
 ---
 
-## ⭐ If you found this project helpful, consider giving it a star!
+⭐ If you found this project useful, feel free to give it a star!
